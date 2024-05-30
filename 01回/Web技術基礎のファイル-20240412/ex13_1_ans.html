@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>inputタグ</title>
+</head>
+
+<body>
+
+<h1>CGIフォームの練習</h1>
+<form action="out.cgi" method="post">
+<ul>
+<li>1行のテキスト入力フィールド<br />
+<input type="text" name="text1" size="50" value="test1..." />
+</li>
+
+<li>パスワード入力フィールド<br />
+<input type="password" name="pass1" size="50" value="pass1..." />
+</li>
+
+<li>隠しフィールド<br />
+<input type="hidden" name="hidden1" value="kakushi" />
+</li>
+
+<li>複数行のテキスト入力フィールド<br />
+<textarea name="textarea1" rows="2" cols="50">
+テキスト入力フィールドです</textarea>
+</li>
+
+<li>ラジオボタン<br />
+<input type="radio" name="radio1" value="1" checked="checked"  />りんご<br />
+<input type="radio" name="radio1" value="2" />バナナ<br />
+<input type="radio" name="radio1" value="3" />モモ
+</li>
+
+<li>チェックボックス<br />
+<input type="checkbox" name="check1" value="1" />魚<br />
+<input type="checkbox" name="check1" value="2" checked="checked"/>肉<br />
+<input type="checkbox" name="check1" value="3" checked="checked" />野菜
+</li>
+
+<li>ファイル送信<br />
+<input type="file" name="file1" />
+</li>
+</ul>
+
+<hr />
+
+<p><input type="submit" value="送信" />
+<input type="reset" value="リセット" /></p>
+
+</form>
+
+</body>
+</html>

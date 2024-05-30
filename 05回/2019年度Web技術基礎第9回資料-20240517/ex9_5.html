@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>リストやテーブルへの応用</title>
+  <script type="text/javascript">
+  <!--
+  function deletepage() {
+    document.getElementById("d").textContent = null;
+  }
+  function showpage1() {
+    deletepage();
+
+    var list = document.createElement("ul");
+    document.getElementById("d").appendChild(list);
+
+    var item1 = document.createElement("li");
+    item1.textContent = "1つ目の項目";
+    list.appendChild(item1);
+
+    var sublist = document.createElement("ul");
+    item1.appendChild(sublist);
+
+    var subitem1 = document.createElement("li");
+    subitem1.textContent = "1つ目の項目の下にぶらさがる項目";
+    sublist.appendChild(subitem1);
+
+    var item2 = document.createElement("li");
+    item2.textContent = "2つ目の項目";
+    list.appendChild(item2);
+  }
+  function showpage2() {
+    deletepage();
+
+    var table = document.createElement("table");
+    table.setAttribute("border", "1");
+    document.getElementById("d").appendChild(table);
+
+    var caption = document.createElement("caption");
+    caption.textContent = "表のタイトル";
+    table.appendChild(caption);
+
+    var line1 = document.createElement("tr");
+    table.appendChild(line1);
+
+    var cell1 = document.createElement("th");
+    cell1.textContent = "1つ目の見出し";
+    line1.appendChild(cell1);
+
+    var cell2 = document.createElement("th");
+    cell2.textContent = "2つ目の見出し";
+    line1.appendChild(cell2);
+
+    var line2 = document.createElement("tr");
+    table.appendChild(line2);
+
+    var cell3 = document.createElement("td");
+    cell3.setAttribute("colspan", "2");
+    cell3.textContent = "1行全部使って表示する内容";
+    line2.appendChild(cell3);
+  }
+  //-->
+  </script>
+</head>
+<body>
+<p>ページを切り換えて文書を読みます。</p>
+<p><span onclick="showpage1()">1ページ</span>
+<span onclick="showpage2()">2ページ</span></p>
+<div id="d">
+<p>はじまり、はじまり。</p>
+</div>
+</body>
+</html>
