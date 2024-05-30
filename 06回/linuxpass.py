@@ -28,10 +28,6 @@ for i0 in range(len(passchar_list)):
                                 passwd = passchar0 + passchar1 + passchar2 + passchar3 + passchar4 + passchar5 + passchar6 + passchar7
                                 cpass = crypt.crypt(passwd, salt)
                                 #print(passwd)
-                                if i6 == len(passchar_list)-1:
-                                    print(time.time() - start_t)
-                                    start_t = time.time()
-                                    
                                 if cpass == target:
                                     print("Yes" + cpass)
                                     print(passwd)
@@ -43,6 +39,8 @@ for i0 in range(len(passchar_list)):
                                 continue
                             break
                         else:
+                            print(time.time() - start_t)
+                            start_t = time.time()
                             continue
                         break
                     else:
