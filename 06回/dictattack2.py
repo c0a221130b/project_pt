@@ -6,9 +6,9 @@ target = "$1$ABCDEFGH$/3XvwCiaQ.3NBkhnySA3V0"
 fname = "./passphrase.txt"
 with open(fname, "r") as f:
     passphrases1 = f.readlines()
-    passphrases2 = f.readlines()
-    passphrases3 = f.readlines()
-    passphrases4 = f.readlines()
+    passphrases2 = passphrases1
+    passphrases3 = passphrases1
+    passphrases4 = passphrases1
     
     for passphrase1 in passphrases1:
         passwd1 = passphrase1.rstrip("\n")
@@ -19,6 +19,7 @@ with open(fname, "r") as f:
                 for passphrase4 in passphrases4:
                     passwd4 = passphrase4.rstrip('\n')
                     passwd0 = passwd1 + passwd2 + passwd3 + passwd4
+                    print(passwd0)
                     cpass = crypt.crypt(passwd0, salt)
                     if cpass == target:
                         print('Yes', cpass)

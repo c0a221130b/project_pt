@@ -1,7 +1,7 @@
 import crypt
 
 #salt = "$6$lu0siAR8yeSoFm1n"
-salt = "$6$ABCDEFGHIGKLMNOP"
+salt = "$6$ABCDEFGHIJKLMNOP"
 #password = "P1abck2#"
 target = "$6$ABCDEFGHIJKLMNO$9CwI7hcVhjzeQHwYZlZbYrOOaqCUZ2MROEOsfZQJfJLI4S.BxWZkQ7/vO6I2hzttDSeBV3rZRUcKsCcEMBhkO1"
 passwdchar_list = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!"

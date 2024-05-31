@@ -4,7 +4,7 @@ import time
 salt = "$2y$10$ecRmAWY4n/jLa0tTzIaG7."
 target = "$2y$10$ecRmAWY4n/jLa0tTzIaG7.SMhb1TfdROy3nXeG5aVZorUX1n6/WHO"
 
-passchar_list = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890"
+passchar_list = "abcdefghijklmnopqrstuvwxyz1234567890"
 start_t = time.time()
 for i0 in range(len(passchar_list)):
     passchar0 = passchar_list[i0]
@@ -20,8 +20,6 @@ for i0 in range(len(passchar_list)):
                         passchar5 = passchar_list[i5]
                         for i6 in range(len(passchar_list)):
                             passchar6 = passchar_list[i6]
-                            print(time.time() - start_t)
-                            start_t = time.time()
                             for i7 in range(len(passchar_list)):
                                 passchar7 = passchar_list[i7]
                                 passwd = passchar0 + passchar1 + passchar2 + passchar3 + passchar4 + passchar5 + passchar6 + passchar7
@@ -35,6 +33,8 @@ for i0 in range(len(passchar_list)):
                                 continue
                             break
                         else:
+                            print(time.time() - start_t)
+                            start_t = time.time()
                             continue
                         break
                     else:

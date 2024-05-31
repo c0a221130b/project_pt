@@ -1,6 +1,6 @@
 import crypt
 
-salt = "$1$AGCDEFGH"
+salt = "$1$ABCDEFGH"
 #target = "$1$ABCDEFGH$gj9oqOTTYQtUtHtvpcQab0"
 target = "$1$ABCDEFGH$v8ioE16z9/YKebnOefllg/"
 
