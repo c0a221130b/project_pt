@@ -9,7 +9,7 @@ cmd = msg.encode()
 mysock.send(cmd)
 
 while True:
-    data = mysock.recv(512)
+    data = mysock.recv(4096)
     if (len(data) < 1):
         break
     print(data.decode())

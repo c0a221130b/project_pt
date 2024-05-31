@@ -5,7 +5,7 @@ cmd = 'GET http://192.168.65.3/test.html HTTP1.0\r\n\r\n'.encode()
 mysock.send(cmd)
 
 while True:
-    data = mysock.recv(512)
+    data = mysock.recv(4096)
     if (len(data) < 1):
         break
     print(data.decode())

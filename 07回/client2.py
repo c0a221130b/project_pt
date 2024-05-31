@@ -5,7 +5,7 @@ cmd = 'GET /test/test.html HTTP/1.1\r\nAccept: text/html,application/xhtml+xml,a
 mysock.send(cmd)
 
 while True:
-    data = mysock.recv(512)
+    data = mysock.recv(4096)
     if (len(data) < 1):
         break
     print(data.decode())
