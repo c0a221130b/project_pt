@@ -6,9 +6,9 @@ usernames = {'user':'', 'taro':'', 'root':''}
 f = open(fname, 'r')
 dictpasswds = f.readlines()
 f.close()
-for username in usernames.keys():
-    for dictpasswd in dictpasswds:
-        passwd = dictpasswd.rstrip('\n')
+for dictpasswd in dictpasswds:
+    passwd = dictpasswd.rstrip('\n')
+    for username in usernames.keys():
         usernames[username] = passwd
         print(username, usernames[username])
 
